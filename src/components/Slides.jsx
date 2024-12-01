@@ -66,7 +66,7 @@ const Slides = () => {
         </div>
       </div>
       <div className='slide-navs flex-col-reverse md:flex-row md:pt-0 pt-2 px-2 flex items-start md:justify-between md:items-center gap-2 md:gap-0'>
-        <div className="slide-info pt-2">
+        <div className="slide-info pt-0 md:pt-2">
           <motion.div key={currentIndex}>
             <motion.h2
               className='md:text-4xl text-2xl'
@@ -77,7 +77,7 @@ const Slides = () => {
               {slidesData[currentIndex].title}
             </motion.h2>
             <motion.button
-              className="bg-sky-500 mt-4 md:mt-2 hover:bg-sky-700 text-white font-bold py-2 px-8 rounded-full shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300 ease-in-out"
+              className="bg-sky-500 mt-2 md:mt-2 hover:bg-sky-700 text-white font-bold py-2 px-8 rounded-full shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300 ease-in-out"
               initial={{ y: 0, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
