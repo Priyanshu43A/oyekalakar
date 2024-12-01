@@ -56,8 +56,8 @@ const Slides = () => {
 
   return (
     <div className='mx-auto mt-[22vh] w-[90%]' {...handlers}>
-      <div className='slide overflow-hidden aspect-[16/6] rounded-2xl bg-purple-800 w-full'>
-        <div className="slide-child" style={{ display: 'flex', transform: `translateX(-${currentIndex * 100}%)`, transition: 'transform 0.5s ease-in-out' }}>
+      <div className='slide overflow-hidden aspect-[16/6] rounded-2xl bg-purple-800 min-h-[456px] w-full'>
+        <div className="slide-child h-full" style={{ display: 'flex', transform: `translateX(-${currentIndex * 100}%)`, transition: 'transform 0.5s ease-in-out' }}>
           {slidesData.map((slide, index) => (
             <a href={slide.link} key={index} style={{ minWidth: '100%' }}>
               <img className='w-full h-full object-cover' src={slide.image} alt={slide.title} />
@@ -65,7 +65,7 @@ const Slides = () => {
           ))}
         </div>
       </div>
-      <div className='slide-navs px-2 flex justify-between items-center'>
+      <div className='slide-navs flex-col-reverse md:flex-row md:pt-0 pt-4 px-2 flex items-start md:justify-between md:items-center gap-6 md:gap-0'>
         <div className="slide-info pt-2">
           <motion.div key={currentIndex}>
             <motion.h2
@@ -77,7 +77,7 @@ const Slides = () => {
               {slidesData[currentIndex].title}
             </motion.h2>
             <motion.button
-              className="bg-sky-500 mt-2 hover:bg-sky-700 text-white font-bold py-2 px-8 rounded-full shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300 ease-in-out"
+              className="bg-sky-500 mt-6 md:mt-2 hover:bg-sky-700 text-white font-bold py-2 px-8 rounded-full shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300 ease-in-out"
               initial={{ y: 0, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
