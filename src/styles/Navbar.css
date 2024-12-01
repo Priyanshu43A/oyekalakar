@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'Belove Melody';
+    src: url('../fonts/belovemelody.ttf') format('truetype');
+}
+
+.navbar{
+    padding: 2vw 5vw 3vw 5vw;
+  
+  border-bottom-left-radius: 62px;
+  border-bottom-right-radius: 62px;
+  position: sticky;
+  top: 0;
+}
+
+.navbar > .nav-child-one{
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+
+    align-items: center;
+}
+
+.nav-search{
+    border: 1px solid #dddddd50;
+    background: #f5f6f8 !important;
+    box-shadow: 0 0 4px #e7e7e750;
+}
+
+.nav-search input[type="text"]{
+    outline: none;
+    background: transparent;
+}
+
+.navbar .logo{
+    font-family: 'Belove Melody', sans-serif;
+    transition: scale 0.2s ease;
+
+}
+
+.navbar .logo:hover{
+    scale: 1.1;
+    transition: scale 0.2s ease;
+}
+
+.link-item{
+    opacity: 1;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.nav-links:hover > :not(:hover) {
+    opacity: 0.5;
+}
+
+ 
+.search-icon{
+    transition: all 0.3s ease;
+     
+    cursor: pointer;
+}
+
+ 
