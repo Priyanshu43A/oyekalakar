@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { FaShoppingBag, FaUser } from 'react-icons/fa';
 
@@ -7,16 +7,46 @@ import '../styles/Navbar.css';
 import logo from '../assets/logo.jpg';
 import { BiSearchAlt } from 'react-icons/bi';
 import { HiOutlineMenuAlt4 } from 'react-icons/hi';
+import Categories from './navbar/Categories';
 
 const Navbar = () => {
+
+ const [currentHover, setcurrentHover] = useState('');
+ const [isHover, setisHover] = useState(false);
+ const expandedNavRef = useRef(null);
+
+ const changeCurrentHover = (current)=>{
+  setcurrentHover(current);
+  setisHover(true);
+ }
+
+ useEffect(() => {
+  if (expandedNavRef.current) {
+   if (isHover) {
+    const scrollHeight = expandedNavRef.current.scrollHeight;
+    expandedNavRef.current.style.maxHeight = `${scrollHeight}px`;
+   } else {
+    expandedNavRef.current.style.maxHeight = '0';
+   }
+  }
+ }, [isHover, currentHover]);
+
   return (
-    <div className="navbar bg-bgprimary flex flex-col gap-4">
+    <div onMouseLeave={()=>{
+      changeCurrentHover('');
+      setisHover(false);
+
+    }} className="navbar bg-bgprimary flex flex-col gap-4">
       <div className='nav-child-one'>
         <div className="menu-nav md:hidden flex justify-center item-center">
         <HiOutlineMenuAlt4 size={28} />
         </div>
       <div className="nav-links hidden md:flex justify-center item-center text-xs gap-4 w-fit">
-        <div className="link-item"><Link to="/categories">CATEGORIES</Link></div>
+        <div 
+         onMouseOver={()=>{
+          changeCurrentHover('categories');
+          console.log(currentHover);
+        }} className="link-item"><Link to="/categories">CATEGORIES</Link></div>
         <div className="link-item"><Link to="/events">EVENTS</Link></div>
         <div className="link-item"><Link to="/competitions">COMPETITIONS</Link></div>
         <div className="link-item"><Link to="/giveaway">GIVEAWAY</Link></div>
@@ -39,7 +69,9 @@ const Navbar = () => {
         <BiSearchAlt size={24} />
       </div>
      </div>
-      
+      <div ref={expandedNavRef} className={`expanded-nav-cont ${isHover ? 'expand' : 'collapse'}`}>
+             { currentHover == 'categories' ? <Categories isHover={isHover} /> : '' }
+      </div>
     </div>
   )
 }

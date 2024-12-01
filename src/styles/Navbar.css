@@ -4,12 +4,22 @@
 }
 
 .navbar{
-    padding: 2vw 5vw 3vw 5vw;
-  
+  padding: 2vw 5vw 1vw 5vw;
   border-bottom-left-radius: 62px;
   border-bottom-right-radius: 62px;
-  position: sticky;
+  position: absolute;
   top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 90vh;
+  z-index: 999;
+}
+
+@media screen and (max-width: 768px){
+  .navbar{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
 }
 
 .navbar > .nav-child-one{
@@ -59,4 +69,21 @@
     cursor: pointer;
 }
 
- 
+.expanded-nav-cont {
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    max-height: 0;
+     
+  }
+  
+  .expanded-nav-cont.expand {
+    /* No need to set max-height here, it's handled dynamically */
+  }
+  
+  .expanded-nav-cont.collapse {
+    max-height: 0;
+  }
+
+  .slide{
+    box-shadow: 2px 2px 6px #b9b9b9, -2px -2px 6px #b8b8b8;
+  }

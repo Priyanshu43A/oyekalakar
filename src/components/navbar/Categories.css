@@ -1,0 +1,49 @@
+.category-nav{
+    padding-top: 2vh;
+    overflow: hidden;
+    /* animation: slideDown 0.3s linear; */
+    height: full;
+    transition: all 1s ease;
+}
+ 
+ 
+
+@keyframes slideDown{
+    from{
+        max-height: 0px;
+    }
+    to{
+        max-height: 80vh;
+    }
+}
+
+
+ 
+
+ 
+
+.expanded-nav-links a{
+    opacity: 1;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+
+.expanded-nav-links a:hover{
+    font-weight: 600;
+    
+    transition: opacity 0.3s ease;
+
+}
+
+
+.expanded-nav-links:hover > :not(:hover) {
+    opacity: 0.5;
+    filter: blur(2px);
+    transition: opacity 0.3s ease;
+}
+
+
+.card-img{
+    box-shadow: 2px 2px 6px #b9b9b9, -2px -2px 6px #b8b8b8;
+}
