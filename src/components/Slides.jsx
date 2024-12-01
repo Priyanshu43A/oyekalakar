@@ -55,7 +55,7 @@ const Slides = () => {
   }, []);
 
   return (
-    <div className='mx-auto mt-[22vh] w-[90%]' {...handlers}>
+    <div className='mx-auto mt-[18vh] md:mt-[22vh] w-[90%]' {...handlers}>
       <div className='slide overflow-hidden aspect-[16/6] rounded-2xl bg-purple-800 min-h-[456px] w-full'>
         <div className="slide-child h-full" style={{ display: 'flex', transform: `translateX(-${currentIndex * 100}%)`, transition: 'transform 0.5s ease-in-out' }}>
           {slidesData.map((slide, index) => (
