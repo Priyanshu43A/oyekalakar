@@ -71,19 +71,62 @@
 
 .expanded-nav-cont {
     overflow: hidden;
-    transition: max-height 0.3s ease;
-    max-height: 0;
-     
-  }
-  
-  .expanded-nav-cont.expand {
-    /* No need to set max-height here, it's handled dynamically */
-  }
-  
-  .expanded-nav-cont.collapse {
-    max-height: 0;
+    transition: all 0.5s ease;
+    height: 100%;  
+    
   }
 
+  /* .expanded-nav-cont.expand{
+     max-height: 2000px;
+  }
+
+  .expanded-nav-cont.collapse{
+    max-height: 0px;
+ } */
+
+  
+  
+  @keyframes slideDown{
+    from{
+        height: 0%;
+    }
+    to{
+        height: 100%;
+    }
+  }
+
+ 
+
   .slide{
-    box-shadow: 2px 2px 6px #b9b9b9, -2px -2px 6px #b8b8b8;
+    box-shadow: 2px 2px 6px #b9b9b98e, -2px -2px 6px #b8b8b888;
+  }
+
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+  
+  /* Hide scrollbar for IE and Edge */
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+  }
+  
+  .snap-x {
+    scroll-snap-type: x mandatory; /* Enable horizontal snap */
+  }
+  
+  .snap-start {
+    scroll-snap-align: start; /* Align the start of the card */
   }

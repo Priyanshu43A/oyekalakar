@@ -10,6 +10,10 @@ import { HiOutlineMenuAlt4 } from 'react-icons/hi';
 import Categories from './navbar/Categories';
 import { IoArrowBackSharp, IoCloseSharp } from 'react-icons/io5';
 import SearchComponent from './search/SearchComponent';
+import Events from './navbar/Events';
+import Competetions from './navbar/Competetions';
+import Giveaway from './navbar/Giveaway';
+import Workshops from './navbar/Workshops';
 
 const Navbar = () => {
 
@@ -19,29 +23,12 @@ const Navbar = () => {
  const [isInputDisabled, setIsInputDisabled] = useState(true);
  const [searchTerm, setsearchTerm] = useState('');
 
- const recents = [
-  // { name: 'Bracelets', url: '/bracelets' },
-  // { name: 'Rings', url: '/rings' },
-  // { name: 'Earrings', url: '/earrings' },
-  // { name: 'Necklaces', url: '/necklaces' },
-  // { name: 'Jewelry Sets', url: '/jewelry-sets' },
- ];
+ const recents = [];
 
  const changeCurrentHover = (current)=>{
   setcurrentHover(current);
   setisHover(true);
  }
-
- useEffect(() => {
-  if (expandedNavRef.current) {
-   if (isHover) {
-    const scrollHeight = expandedNavRef.current.scrollHeight;
-    expandedNavRef.current.style.maxHeight = `${scrollHeight}px`;
-   } else {
-    expandedNavRef.current.style.maxHeight = '0';
-   }
-  }
- }, [isHover, currentHover]);
 
  useEffect(() => {
   if (!isInputDisabled && expandedNavRef.current) {
@@ -54,7 +41,6 @@ const Navbar = () => {
 
  const handleSearch = () => {
   if (!isInputDisabled) {
-    // Save the search term to local storage
     if (searchTerm) {
       const searchLink = `https://yoursearchurl.com/search?q=${encodeURIComponent(searchTerm)}`;
       const recents = JSON.parse(localStorage.getItem('recents')) || [];
@@ -107,10 +93,28 @@ const Navbar = () => {
           changeCurrentHover('categories');
           console.log(currentHover);
         }} className="link-item"><Link to="/categories">CATEGORIES</Link></div>
-        <div className="link-item"><Link to="/events">EVENTS</Link></div>
-        <div className="link-item"><Link to="/competitions">COMPETITIONS</Link></div>
-        <div className="link-item"><Link to="/giveaway">GIVEAWAY</Link></div>
-        <div className="link-item"><Link to="/workshops">WORKSHOPS</Link></div>
+        <div
+        onMouseOver={()=>{
+          changeCurrentHover('events');
+          console.log(currentHover);
+        }}
+         className="link-item"><Link to="/events">EVENTS</Link></div>
+        <div 
+        onMouseOver={() => {
+          changeCurrentHover('competitions');
+          console.log(currentHover);
+        }} 
+        className="link-item"><Link to="/competitions">COMPETITIONS</Link></div>
+        <div 
+          onMouseOver={() => changeCurrentHover('giveaway')} 
+          className="link-item">
+          <Link to="/giveaway">GIVEAWAY</Link>
+        </div>
+        <div 
+          onMouseOver={() => changeCurrentHover('workshops')} 
+          className="link-item">
+          <Link to="/workshops">WORKSHOPS</Link>
+        </div>
       </div>
       <div className="logo flex w-fit mx-auto text-2xl font-semibold text-heading cursor-pointer">
         <a href="/"><h1>OYE KALAKAR</h1></a>
@@ -168,6 +172,11 @@ const Navbar = () => {
       <div ref={expandedNavRef} className={`expanded-nav-cont ${isHover ? 'expand' : 'collapse'} border-b-2 border-gray-50`}>
              { currentHover == 'categories' ? <Categories isHover={isHover} /> : '' }
              { currentHover == 'search' ? <SearchComponent recents={recents} /> : '' }
+             { currentHover == 'events' ? <Events /> : '' }
+             { currentHover == 'competitions' ? <Competetions /> : '' }
+             { currentHover == 'giveaway' ? <Giveaway /> : '' }
+             { currentHover == 'workshops' ? <Workshops /> : '' }
+
 
       </div>
     </div>

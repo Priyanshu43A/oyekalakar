@@ -30,7 +30,7 @@ const slidesData = [
     buttonText: "Participate now"
   },
   // Add more slides as needed
-];
+];  
 
 const Slides = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -56,7 +56,7 @@ const Slides = () => {
 
   return (
     <div className='mx-auto mt-[18vh] md:mt-[22vh] w-[90%]' {...handlers}>
-      <div className='slide overflow-hidden aspect-[16/6] rounded-2xl bg-purple-800 min-h-[456px] w-full'>
+      <div className='slide overflow-hidden aspect-[16/6] rounded-2xl bg-transparent min-h-[456px] w-full'>
         <div className="slide-child h-full" style={{ display: 'flex', transform: `translateX(-${currentIndex * 100}%)`, transition: 'transform 0.5s ease-in-out' }}>
           {slidesData.map((slide, index) => (
             <a href={slide.link} key={index} style={{ minWidth: '100%' }}>
@@ -69,7 +69,7 @@ const Slides = () => {
         <div className="slide-info pt-0 md:pt-2">
           <motion.div key={currentIndex}>
             <motion.h2
-              className='md:text-4xl text-2xl'
+              className='md:text-3xl text-2xl'
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -77,7 +77,7 @@ const Slides = () => {
               {slidesData[currentIndex].title}
             </motion.h2>
             <motion.button
-              className="bg-sky-500 mt-2 md:mt-2 hover:bg-sky-700 text-white font-bold py-2 px-8 rounded-full shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300 ease-in-out"
+              className="bg-sky-500 mt-2 md:mt-3 hover:bg-sky-700 text-white font-bold py-2 px-8 rounded-full shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300 ease-in-out"
               initial={{ y: 0, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
