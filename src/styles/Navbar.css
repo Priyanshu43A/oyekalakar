@@ -7,7 +7,7 @@
   padding: 2vw 5vw 1vw 5vw;
   border-bottom-left-radius: 62px;
   border-bottom-right-radius: 62px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
