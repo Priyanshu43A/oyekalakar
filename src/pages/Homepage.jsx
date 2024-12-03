@@ -15,7 +15,8 @@ const Homepage = () => {
       price: "799.99",
       discount: 10,
       freeShipping: true,
-      freeGift: false,
+      freeGift: true,
+      cod: true,
       retailer: {
         name: "Amazon",
         logo: "https://via.placeholder.com/24",

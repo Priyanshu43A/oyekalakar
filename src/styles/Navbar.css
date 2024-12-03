@@ -72,17 +72,21 @@
 .expanded-nav-cont {
     overflow: hidden;
     transition: all 0.5s ease;
-    height: 100%;  
+    height: 100%; 
+    
     
   }
 
-  /* .expanded-nav-cont.expand{
+  .expanded-nav-cont.expand{
      max-height: 2000px;
+     opacity: 1;
+
   }
 
   .expanded-nav-cont.collapse{
     max-height: 0px;
- } */
+    opacity: 0;
+ }
 
   
   
