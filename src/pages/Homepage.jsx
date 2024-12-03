@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 const Homepage = () => {
   const productData = [
     {
-      image: "https://m.media-amazon.com/images/I/71jG+e7roXL._AC_SL1500_.jpg",
+      image: "https://cdn.igp.com/f_auto,q_auto,t_pnopt5prodlp/products/p-radiant-sunshine-and-purple-pop-bouquet-390602-m.jpg",
       brand: "Apple",
       title: "Apple iPad Pro 11-inch Wi-Fi 256GB",
       price: "799.99",
@@ -24,7 +24,7 @@ const Homepage = () => {
       onViewDeal: () => alert("Viewing deal for Apple iPad Pro!"),
     },
     {
-      image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&q=80&w=400",
+      image: "https://cdn.igp.com/f_auto,q_auto,t_pnopt5prodlp/products/p-personalized-classic-accessories-hamper-for-him-387055-m.jpg",
       brand: "Samsung",
       title: "Samsung Galaxy Book Pro i7 16GB/512GB",
       price: "1149.99",

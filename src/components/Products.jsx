@@ -26,7 +26,7 @@ const Products = ({ heading, link, productData }) => {
         <h1 className='text-xl md:text-3xl font-semibold md:font-bold'>{heading}</h1>
         <Link to={link} className='flex items-center gap-1'>View all<MdKeyboardArrowRight size={24} /></Link>
       </div>
-      <div className='hidden md:flex justify-end gap-4 items-center  mb-4'>
+      <div className='hidden md:flex justify-end gap-4 items-center mb-4 md:mb-0'>
           <button onClick={handlePrev} className='bg-gray-100 p-1 rounded-full flex items-center'>
             <MdKeyboardArrowLeft size={32} />
           </button>
@@ -35,7 +35,7 @@ const Products = ({ heading, link, productData }) => {
           </button>
         </div>
       <div className='relative'>
-        <div ref={scrollRef} className='flex overflow-x-auto scrollbar-hide gap-8'>
+        <div ref={scrollRef} className='flex overflow-x-auto scrollbar-hide pl-4 pt-4 gap-8'>
           {validProductData.map((product, index) => (
             <ProductCard key={index} product={product} />
           ))}
